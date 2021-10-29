@@ -151,8 +151,6 @@ auto ctrl_c_handler::event() const {
         assert(previous == nullptr);
       }
       void complete() override final {
-        printf("handled a ctrl-c\n");
-        fflush(stdout);
         unifex::set_value(std::move(rec_));
       }
     };

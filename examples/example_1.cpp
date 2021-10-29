@@ -140,8 +140,9 @@ keyclick_sender read_keyclick() {
 int main() {
   register_keyboard_callback(on_keyclick);
 
-   auto read_next_char = read_keyclick() |
-      unifex::then([](char ch) { printf("In then with char: %c\n", ch); });
+   auto read_next_char =
+      read_keyclick()
+    | unifex::then([](char ch) { printf("In then with char: %c\n", ch); });
 
-  (void)unifex::sync_wait(read_next_char);
+  (void) unifex::sync_wait(read_next_char);
 }
