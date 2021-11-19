@@ -38,6 +38,8 @@
 #pragma comment(lib, "shlwapi.lib")
 #include <strsafe.h>
 
+#include <array>
+
 struct Player {
   class MediaPlayerCallback : public IMFPMediaPlayerCallback {
     size_t id_;
